@@ -1,5 +1,6 @@
-lib/features/calculators/calculators_screen.dart
+
 import 'package:flutter/material.dart';
+import 'perimeter/perimeter_screen.dart';
 
 class CalculatorsScreen extends StatelessWidget {
   const CalculatorsScreen({super.key});
@@ -22,43 +23,59 @@ class CalculatorsScreen extends StatelessWidget {
           children: [
 
             _calculatorCard(
+              context,
               '📐 Perimeter',
               Icons.straighten,
+              const PerimeterScreen(),
             ),
 
             _calculatorCard(
+              context,
               '📏 Area',
               Icons.square_foot,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🧱 Volume',
               Icons.view_in_ar,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🧱 Concrete',
               Icons.foundation,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🔩 Reinforcement',
               Icons.build,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🪵 Formwork',
               Icons.architecture,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🏠 Foundation',
               Icons.home_work,
+              null,
             ),
 
             _calculatorCard(
+              context,
               '🪨 Earthworks',
               Icons.terrain,
+              null,
             ),
           ],
         ),
@@ -68,16 +85,31 @@ class CalculatorsScreen extends StatelessWidget {
 
 
   Widget _calculatorCard(
-      String title,
-      IconData icon,
-      ) {
+    BuildContext context,
+    String title,
+    IconData icon,
+    Widget? page,
+  ) {
 
     return Card(
       elevation: 3,
 
       child: InkWell(
 
-        onTap: () {},
+        onTap: () {
+
+          if (page != null) {
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => page,
+              ),
+            );
+
+          }
+
+        },
 
         child: Column(
           mainAxisAlignment:
@@ -98,6 +130,7 @@ class CalculatorsScreen extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
             ),
+
           ],
         ),
       ),
