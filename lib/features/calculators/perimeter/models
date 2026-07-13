@@ -1,1 +1,21 @@
 lib/features/calculators/perimeter/models/perimeter_model.dart
+class PerimeterModel {
+
+  final String shape;
+  final double value;
+  final String unit;
+
+  PerimeterModel({
+    required this.shape,
+    required this.value,
+    required this.unit,
+  });
+
+
+  String get result {
+
+    return '$shape perimeter = $value $unit';
+
+  }
+
+}
