@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/dashboard/dashboard_screen.dart';
 
 void main() {
   runApp(const CivilEngineerPro());
@@ -18,37 +19,7 @@ class CivilEngineerPro extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const DashboardScreen(),
     );
   }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Civil Engineer Pro'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'The Complete Civil Engineering Toolkit',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20),
-            Text('Welcome to Civil Engineer Pro'),
-          ],
-        ),
-      ),
-    );
-  }
-}
+}} 
